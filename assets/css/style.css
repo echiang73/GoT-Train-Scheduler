@@ -1,0 +1,91 @@
+@font-face {
+    font-family:"GoT-font";
+    src: url(../font/Game_of_Thrones.ttf);
+}
+body{
+    /* background: url(../images/kapalua-bay-besthawaii0216.jpg) no-repeat center fixed; */
+    background-image: url(../images/kapalua-bay-besthawaii0216.jpg);
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    /* background-color: #f4b87c; */
+}
+.container{
+    margin-top: 10px;
+}
+.jumbotron{
+    border: 2px solid black;
+}
+h5{
+    text-align: center;
+    font-family: GoT-font;
+}
+#banner{
+    border: 2px solid black;
+    background-color: #7b906f;
+    margin-bottom: 20px;
+}
+#logo{
+    width: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+}
+footer {
+    font-family:  Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    clear: both;
+    overflow: auto;
+    background:black;
+    color: #f4b87c;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-top: 4px solid blue;
+    /* to make a sticky footer */
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+.footer > a{
+    margin-left: 2px;
+    margin-right: 2px;
+    color: #f4b87c;
+}
+
+/* Medium devices (landscape tablet, 1080px) */
+@media only screen and (max-width: 1080px) {
+    body{
+        background-image: url('../images/kapalua-bay-besthawaii0216alt.jpg');
+        background-attachment: fixed;
+        background-position: top;
+        background-repeat: no-repeat;
+        background-color: #f4b87c;
+    }
+  } 
+
+/* Small devices (portrait phone, 520px) */
+@media only screen and (max-width: 520px) {
+    body{
+        background-image: url('../images/kapalua-bay-besthawaii0216alt2.jpg');
+        background-attachment: fixed;
+        background-position: top;
+        background-repeat: no-repeat;
+        background-color: #f4b87c;
+    }
+    .fullTitle{
+        font-size: 40px;
+    }
+    #instructions{
+        font-size: 14px;
+    }
+  } 
