@@ -10,12 +10,11 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <script src="https://code.jquery.com/jquery-3.3.1.js"
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/af.js"></script>
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js></script>
     <title>GoT Train Scheduler</title>
 </head>
 
@@ -43,10 +42,12 @@
             </div> -->
         </div>
 
-
         <div class="card" id="current-train-container">
-            <h6 class="card-header" id="current-train">Current Train Schedule For Leaving Winterfell</h6>
+            <h6 class="card-header" id="current-train">Current Train Schedule</h6>
             <div class="card-body">
+                <div id=current-station>Departure Time from Winterfell Station</div>
+                <div id=current-time></div>
+                <br>
                 <table class="table table-sm table-hover" id="schedule-display">
                     <thead>
                         <tr>
@@ -58,7 +59,7 @@
                         </tr>
                     </thead>
                     <tbody>
-
+                        <!-- Dynamic train schedules are appended here-->
                     </tbody>
                 </table>
 
@@ -97,8 +98,6 @@
                         </form>
                     </div>
                     <br>
-
-
 
                     <div class="col-6">
 
@@ -142,19 +141,11 @@
                                 </div>
                             </div> -->
                         </div>
-
-
                     </div>
                 </div>
             </div>
-
         </div>
-
     </div>
-
-
-
-
 
     <footer class="footer" style="text-align: center">
         <a class=link href="https://echiang73.github.io/" target="_blank">Eddie Chiang &circledR; 2019 | </a>
@@ -166,15 +157,8 @@
                 style="color:#7b906f"></i></a>
     </footer>
 
-
     <script type="text/javascript" src="assets/javascript/main.js"></script>
 
-    <!-- <audio src="assets/sound/somewheretrim.mp3" type="audio/mpeg"></audio> -->
-
-    <!-- <audio id="myAudio" autoplay>
-                <source src="assets/sound/somewheretrim.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio> -->
 </body>
 
 </html>

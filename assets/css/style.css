@@ -35,6 +35,11 @@ h5{
     align-items: center;
     margin: 0 auto;
 }
+#current-station, #current-time{
+    text-align: center;
+    color: #7b906f;
+    font-weight: bold
+}
 #current-train-container, #add-train-container{
     border: 2px solid black;
 }
