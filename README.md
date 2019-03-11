@@ -19,9 +19,10 @@ https://echiang73.github.io/GoT_train/
 * JavaScript
 * Bootstrap
 * jQuery
-* Firebase API with Moment.js
+* Firebase API for real-time, multi-device synchronization
+* Moment.js to manage time in JS.
 * Responsive Web Design Media Query
-* Form input Font Awesome image and use of pseudocodes
+* Font Awesome and @font-face for GoT font
 
 ### Here are the previews of the game:
 
