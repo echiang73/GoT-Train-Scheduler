@@ -6,14 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/jpg" href="assets/images/echiang-brand.png" />
     <!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <script src="https://code.jquery.com/jquery-3.3.1.js"
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/af.js"></script>
     <title>GoT Train Scheduler</title>
 </head>
 
@@ -33,7 +35,7 @@
                 <!-- <div class="col py-3 px-md-5 border bg-light">Custom column padding</div> -->
             </div>
 
-            <h5 id="title">Train Scheduler for Film Locations</h5>
+            <h5 id="title">Train Scheduler for Filming Locations</h5>
             <!-- <div class="lead">
                 "Train is coming!" Hop aboard on the Game of Thrones trains to visit the GoT filming locations. You can play the role of a
                 train administrator and add/edit/delete train information. The information will automatically update
@@ -42,68 +44,82 @@
         </div>
 
 
-        <div class="card">
-            <h6 class="card-header">Current Train Schedule</h6>
-            <div class="card-body" id="schedule-display">
+        <div class="card" id="current-train-container">
+            <h6 class="card-header" id="current-train">Current Train Schedule For Leaving Winterfell</h6>
+            <div class="card-body">
+                <table class="table table-sm table-hover" id="schedule-display">
+                    <thead>
+                        <tr>
+                            <th scope="col">Train Name</th>
+                            <th scope="col">Destination</th>
+                            <th scope="col">Frequency (min)</th>
+                            <th scope="col">Next Arrival</th>
+                            <th scope="col">Minutes Away</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
 
             </div>
         </div>
         <br />
 
-
-        <div class="card">
-            <h6 class="card-header">Add Train</h6>
+        <div class="card" id="add-train-container">
+            <h6 class="card-header" id="add-train">Add Train</h6>
             <div class="card-body">
                 <div class="row">
                     <div class="col-6">
                         <form>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Train Name</label>
-                                <input type="text" class="form-control form-control-sm" id="train-name"
+                                <label for="train-name-input">Train Name</label>
+                                <input type="text" class="form-control form-control-sm" id="train-name-input"
                                     placeholder="Train name">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Destination</label>
-                                <input type="text" class="form-control form-control-sm" id="destination"
+                                <label for="destination-input">Destination</label>
+                                <input type="text" class="form-control form-control-sm" id="destination-input"
                                     placeholder="Where to?">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">First Train Time (HH:mm - military time)</label>
-                                <input type="text" class="form-control form-control-sm" id="trainFirstTime"
+                                <label for="time-first-train-input">First Train Time (HH:mm - military time)</label>
+                                <input type="text" class="form-control form-control-sm" id="time-first-train-input"
                                     placeholder="HH:mm">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Frequency (min)</label>
-                                <input type="text" class="form-control form-control-sm" id="trainFrequency"
+                                <label for="frequency-input">Frequency (min)</label>
+                                <input type="text" class="form-control form-control-sm" id="frequency-input"
                                     placeholder="How often?">
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary" id="add-train-btn">Submit</button>
                         </form>
                     </div>
+                    <br>
 
 
 
                     <div class="col-6">
 
-                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
-                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselIndicators" data-slide-to="1"></li>
+                                <li data-target="#carouselIndicators" data-slide-to="2"></li>
                             </ol>
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="assets/images/sceneframing/game-of-thrones-filming-location-northern-ireland-7803-585x390.jpg"
-                                        class="d-block w-100" alt="...">
+                                    <img src="assets/images/sceneframing/game-of-thrones-1.jpg" class="d-block w-100"
+                                        alt="...">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="assets/images/sceneframing/game-of-thrones-inch-abbey-northern-ireland-7485-585x390.jpg"
-                                        class="d-block w-100" alt="...">
+                                    <img src="assets/images/sceneframing/game-of-thrones-2.jpg" class="d-block w-100"
+                                        alt="...">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="assets/images/sceneframing/game-of-thrones-northern-ireland-7983-1-585x390.jpg"
-                                        class="d-block w-100" alt="...">
+                                    <img src="assets/images/sceneframing/game-of-thrones-3.jpg" class="d-block w-100"
+                                        alt="...">
                                 </div>
                             </div>
                             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
@@ -117,14 +133,14 @@
                                 <span class="sr-only">Next</span>
                             </a>
 
-                            <div class="carousel-item">
+                            <!-- <div class="carousel-item">
                                 <img src="assets/images/sceneframing/game-of-thrones-filming-location-northern-ireland-7803-585x390.jpg"
                                     alt="...">
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>Northern Ireland</h5>
                                     <p>The Starks in the forest on a Game of Thrones location in Northern Ireland.</p>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
 
 
@@ -143,14 +159,15 @@
     <footer class="footer" style="text-align: center">
         <a class=link href="https://echiang73.github.io/" target="_blank">Eddie Chiang &circledR; 2019 | </a>
         <a class=link href="https://www.linkedin.com/in/eddie-t-chiang" target="_blank"><i class="fab fa-linkedin fa-2x"
-                style="color:#f4b87c"></i></a>
+                style="color:#7b906f"></i></a>
         <a class=link href="https://github.com/echiang73" target="_blank"><i class="fab fa-github fa-2x"
-                style="color:#f4b87c"></i></a>
+                style="color:#7b906f"></i></a>
         <a class=link href="https://angel.co/eddie-chiang" target="_blank"><i class="fab fa-angellist fa-2x"
-                style="color:#f4b87c"></i></a>
+                style="color:#7b906f"></i></a>
     </footer>
 
-    <!-- <script type="text/javascript" src="assets/javascript/app.js"></script> -->
+
+    <script type="text/javascript" src="assets/javascript/main.js"></script>
 
     <!-- <audio src="assets/sound/somewheretrim.mp3" type="audio/mpeg"></audio> -->
 
@@ -161,46 +178,3 @@
 </body>
 
 </html>
-
-<!-- <div>
-        <div class="row">
-            <div class="col-6">
-                <form>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Train Name</label>
-                        <input type="text" class="form-control form-control-sm" id="train-name"
-                            placeholder="Train name">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Destination</label>
-                        <input type="text" class="form-control form-control-sm" id="destination"
-                            placeholder="Where to?">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">First Train Time (HH:mm - military time)</label>
-                        <input type="text" class="form-control form-control-sm" id="trainFirstTime"
-                            placeholder="HH:mm">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Frequency (min)</label>
-                        <input type="text" class="form-control form-control-sm" id="trainFrequency"
-                            placeholder="How often?">
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
-
-            <div class="col-6">
-                <div class="carousel-item">
-                    <img src="assets/images/sceneframing/game-of-thrones-filming-location-northern-ireland-7803-585x390.jpg"
-                        alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Northern Ireland</h5>
-                        <p>The Starks in the forest on a Game of Thrones location in Northern Ireland.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div> -->

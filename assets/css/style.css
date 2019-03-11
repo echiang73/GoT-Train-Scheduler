@@ -3,13 +3,12 @@
     src: url(../font/Game_of_Thrones.ttf);
 }
 body{
-    /* background: url(../images/kapalua-bay-besthawaii0216.jpg) no-repeat center fixed; */
-    background-image: url(../images/kapalua-bay-besthawaii0216.jpg);
+    background: url(../images/GoT-Kings-Landing-Wallpaper1.jpg) no-repeat center fixed;
     background-attachment: fixed;
     background-position: top;
     background-repeat: no-repeat;
     background-size: 100%;
-    /* background-color: #f4b87c; */
+    background-color: #f4b87c;
 }
 .container{
     margin-top: 10px;
@@ -20,6 +19,9 @@ body{
 h5{
     text-align: center;
     font-family: GoT-font;
+}
+#title{
+    margin-bottom: -10px;
 }
 #banner{
     border: 2px solid black;
@@ -32,7 +34,20 @@ h5{
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-
+}
+#current-train-container, #add-train-container{
+    border: 2px solid black;
+}
+#current-train, #add-train{
+    border-bottom: 2px solid black;
+    background-color: #7b906f;
+    font-family: GoT-font;
+}
+#add-train-container{
+    padding-bottom: 40px;
+}
+.carousel-inner{
+    border: 2px solid black;
 }
 footer {
     font-family:  Arial, Helvetica, sans-serif;
@@ -40,17 +55,17 @@ footer {
     clear: both;
     overflow: auto;
     background:black;
-    color: #f4b87c;
+    color: #b5985a;
     text-align: center;
     padding-top: 5px;
     padding-bottom: 5px;
-    border-top: 4px solid blue;
+    border-top: 4px solid #7b906f;
     /* to make a sticky footer */
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    z-index: 2;
+    z-index: 10;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,7 +74,7 @@ footer {
 .footer > a{
     margin-left: 2px;
     margin-right: 2px;
-    color: #f4b87c;
+    color: #7b906f;
 }
 
 /* Medium devices (landscape tablet, 1080px) */
