@@ -16,7 +16,7 @@ body{
 .jumbotron{
     border: 2px solid black;
 }
-h5{
+h5, h6{
     text-align: center;
     font-family: GoT-font;
 }
@@ -49,11 +49,15 @@ h5{
     background-color: #7b906f;
     font-family: GoT-font;
 }
-#add-train-container{
-    padding-bottom: 40px;
-}
-.carousel-inner{
+.carousel-image{
     border: 2px solid black;
+}
+.carousel-caption{
+    color:red;
+    position: relative;
+    left: auto;
+    right: auto;
+    margin-top: 15px;
 }
 footer {
     font-family:  Arial, Helvetica, sans-serif;

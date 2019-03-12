@@ -89,38 +89,3 @@ var windowTimeout = setInterval(function () {
 
 }, 1000 * 0.1);
 
-
-
-
-
-
-
-// // function to refresh display every 0.1 second
-// var windowTimeout = setInterval(function () {
-//   $("#current-time").text("Current date and time: " + moment().format("dddd, MMMM Do YYYY, hh:mm:ss A"));
-//   $("#schedule-display > tbody").empty();
-
-//   database.ref().on("child_added", function(childSnapshot) {
-
-//   var trainName = childSnapshot.val().trainName;
-//   var destination = childSnapshot.val().destination;
-//   var timeFirstTrain = childSnapshot.val().timeFirstTrain;
-//   var frequency = childSnapshot.val().frequency;
-
-//   var currentTime = (moment().format("hh:mm A"));
-//   var timeFirstTrainConverted = moment(timeFirstTrain, "HH:mm").subtract(1, "years");
-//   var diffTime = moment().diff(moment(timeFirstTrainConverted), "minutes");
-//   var timeRemainder = diffTime % frequency;
-//   var minutesTillTrain = frequency - timeRemainder;
-//   var nextTrain = moment().add(minutesTillTrain, "minutes");
-
-//   var newRow = $("<tr>").append(
-//     $("<td>").text(trainName),
-//     $("<td>").text(destination),
-//     $("<td>").text(frequency),
-//     $("<td>").text(moment(nextTrain).format("hh:mm A")),
-//     $("<td>").text(minutesTillTrain)
-//   );
-//   $("#schedule-display > tbody").append(newRow);
-//   });
-// }, 1000 * 0.1);
