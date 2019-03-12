@@ -19,8 +19,8 @@ https://echiang73.github.io/GoT_train/
 * JavaScript
 * Bootstrap
 * jQuery
-* Firebase API for real-time, multi-device synchronization
-* Moment.js to manage time in JS.
+* Firebase API for real-time, multi-device -browser synchronization
+* Moment.js to manage and calculate time in JS.
 * Responsive Web Design Media Query
 * Font Awesome and @font-face for GoT font
 

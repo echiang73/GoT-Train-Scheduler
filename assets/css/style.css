@@ -110,14 +110,14 @@ footer {
   } 
   
 /* Small devices (portrait phone, 520px) */
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 450px) {
     body{
         background-image: url('../images/GoT-Kings-Landing-Wallpaper4.jpeg');
         background-attachment: fixed;
         background-position: top;
         background-repeat: no-repeat;
         /* background-color: #f4b87c; */
-        background-color: red;
+        background-color:yellow;
     }
     #current-station, #current-time{
         text-align: center;
@@ -126,7 +126,7 @@ footer {
         font-size: 14px;
     }
     #schedule-display{
-        font-size: 12px;
+        font-size: 11px;
     }
     h5, h6{
         font-size: 12px;
