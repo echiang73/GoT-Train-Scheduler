@@ -6,9 +6,7 @@ Game of Thrones Filming Location Train Scheduler
 ## App Interface
 Instructions:
 * Enter new train information and submit to display.
-* Click on the update button next to each train to edit the information.
-* Click on the remove button next to each train to delete the information
-* Make sure you turn up your volume to enjoy the music (for Firefox only).
+* Click on the carousel control to control the slides.
 
 Click on the link!
 https://echiang73.github.io/GoT_train/
