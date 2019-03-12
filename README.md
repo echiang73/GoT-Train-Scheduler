@@ -5,8 +5,10 @@ Game of Thrones Filming Location Train Scheduler
 
 ## App Interface
 Instructions:
-* Enter new train information and submit to display.
-* Click on the carousel control to control the slides.
+* Compare each train schedule and how long until the next train will arrive.
+* Enter new train information and first train time (in military time).
+* Click submit button to automate the calculations and display the new train information.
+* Click on the carousel control to control the image slides.
 
 Click on the link!
 https://echiang73.github.io/GoT_train/
@@ -22,7 +24,7 @@ https://echiang73.github.io/GoT_train/
 * Responsive Web Design Media Query
 * Font Awesome and @font-face for GoT font
 
-### Here are the previews of the game:
+### Here are the previews of the web application:
 
 ![](assets/images/webpreview.gif "gif")
 
