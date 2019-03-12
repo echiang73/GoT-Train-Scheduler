@@ -88,9 +88,9 @@ footer {
 }
 
 /* Medium devices (landscape tablet, 1080px) */
-@media only screen and (max-width: 1080px) {
+@media only screen and (max-width: 992px) {
     body{
-        background-image: url('../images/kapalua-bay-besthawaii0216alt.jpg');
+        background-image: url('../images/GoT-Kings-Landing-Wallpaper2.jpg');
         background-attachment: fixed;
         background-position: top;
         background-repeat: no-repeat;
@@ -98,19 +98,33 @@ footer {
     }
   } 
 
-/* Small devices (portrait phone, 520px) */
-@media only screen and (max-width: 520px) {
+/* Small devices (landscape phone, 700px) */
+@media only screen and (max-width: 700px) {
     body{
-        background-image: url('../images/kapalua-bay-besthawaii0216alt2.jpg');
+        background-image: url('../images/GoT-Kings-Landing-Wallpaper3.jpg');
         background-attachment: fixed;
         background-position: top;
         background-repeat: no-repeat;
         background-color: #f4b87c;
     }
-    .fullTitle{
+  } 
+  
+/* Small devices (portrait phone, 520px) */
+@media only screen and (max-width: 520px) {
+    body{
+        background-image: url('../images/GoT-Kings-Landing-Wallpaper4.jpeg');
+        background-attachment: fixed;
+        background-position: top;
+        background-repeat: no-repeat;
+        background-color: #f4b87c;
+    }
+    #add-train-container{
+        padding-bottom: 750px;
+    }
+    /* .fullTitle{
         font-size: 40px;
     }
     #instructions{
         font-size: 14px;
-    }
+    } */
   } 
