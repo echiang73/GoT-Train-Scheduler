@@ -110,21 +110,25 @@ footer {
   } 
   
 /* Small devices (portrait phone, 520px) */
-@media only screen and (max-width: 520px) {
+@media only screen and (max-width: 480px) {
     body{
         background-image: url('../images/GoT-Kings-Landing-Wallpaper4.jpeg');
         background-attachment: fixed;
         background-position: top;
         background-repeat: no-repeat;
-        background-color: #f4b87c;
+        /* background-color: #f4b87c; */
+        background-color: red;
     }
-    #add-train-container{
-        padding-bottom: 750px;
-    }
-    /* .fullTitle{
-        font-size: 40px;
-    }
-    #instructions{
+    #current-station, #current-time{
+        text-align: center;
+        color: #7b906f;
+        font-weight: bold;
         font-size: 14px;
-    } */
+    }
+    #schedule-display{
+        font-size: 12px;
+    }
+    h5, h6{
+        font-size: 12px;
+    }
   } 
