@@ -38,7 +38,8 @@ h5{
 #current-station, #current-time{
     text-align: center;
     color: #7b906f;
-    font-weight: bold
+    font-weight: bold;
+    font-size: 18px;
 }
 #current-train-container, #add-train-container{
     border: 2px solid black;
