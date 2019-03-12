@@ -110,7 +110,7 @@ footer {
   } 
   
 /* Small devices (portrait phone, 520px) */
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 400px) {
     body{
         background-image: url('../images/GoT-Kings-Landing-Wallpaper4.jpeg');
         background-attachment: fixed;
