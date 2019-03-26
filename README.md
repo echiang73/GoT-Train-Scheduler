@@ -11,7 +11,7 @@ Instructions:
 * Click on the carousel control to control the image slides.
 
 Click on the link!
-https://echiang73.github.io/GoT_train/
+https://echiang73.github.io/GoT-Train-Scheduler/
 
 ## Built with
 * HTML5
